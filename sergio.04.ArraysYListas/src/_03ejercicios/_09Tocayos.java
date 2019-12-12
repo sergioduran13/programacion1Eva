@@ -10,6 +10,7 @@ public class _09Tocayos {
 
 		boolean tocayo = false;
 		int total = 0;
+	
 		for (int i = 0; i < lista1.length; i++) {
 			for (int j = 0; j < lista2.length && !tocayo; j++) {
 				if (lista1[i].equals(lista2[j])) {

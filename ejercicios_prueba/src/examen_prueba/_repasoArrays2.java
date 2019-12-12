@@ -28,8 +28,10 @@ public class _repasoArrays2 {
 		
 		
 		int[] v = {10, 20, 25, 28, 10, 5, 5, -1, 1};
+		int[] c = {0, 0, 20, 10, 0, 5, 5, 0, 0};
+
 		
-		System.out.println(porPrimerElementoConCaracteristica(v));
+		System.out.println(porPrimerElementoConCaracteristica(c));
 		
 
 	}

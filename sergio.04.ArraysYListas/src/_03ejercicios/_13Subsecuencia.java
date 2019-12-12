@@ -3,7 +3,7 @@ package _03ejercicios;
 public class _13Subsecuencia {
 
 	public static int posicionSecuencia(int[] a) {
-		int posicion = 0;
+		int posicion = -1;
 		int secuencia = 0;
 		boolean encontrado = false;
 		
@@ -24,13 +24,10 @@ public class _13Subsecuencia {
 	}
 
 	public static void main(String[] args) {
-		int[] a = {7, 1, 2, 8, 3, 8, 9, 10,11 };
+		int[] a = {7, 1, 2, 8, 3, 7, 7, 10,11 };
 		int posicion = posicionSecuencia(a);
 		
-		if(posicion==0)
-		System.out.println("-1");
 		
-		else
 			System.out.println(posicion);
 		
 	}

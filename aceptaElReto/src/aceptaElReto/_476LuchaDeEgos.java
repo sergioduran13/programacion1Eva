@@ -3,11 +3,9 @@ package aceptaElReto;
 import java.util.Scanner;
 
 public class _476LuchaDeEgos {
+	static Scanner tec = new Scanner(System.in);
 
 	public static void emparejamiento(int superheroes) {
-		Scanner tec = new Scanner(System.in);
-
-		String resultado;
 
 		int[] nivel = new int[superheroes];
 
@@ -29,9 +27,9 @@ public class _476LuchaDeEgos {
 
 			} else if (valor == '>') {
 				max[i] = 5;
-				min[i] = rival + 1;
+				min[i] = rival +1;
 			} else {
-				max[i] = rival - 1;
+				max[i] = rival -1;
 				min[i] = 1;
 			}
 		}
@@ -43,43 +41,38 @@ public class _476LuchaDeEgos {
 		}
 
 		boolean pareja = false;
-		for (int i = 0; i < (asignados.length -1); i++) {
+		for (int i = 0; i < (asignados.length - 1); i++) {
+			
 			boolean encontrado = false;
-			for (int j = i + 1; j < asignados.length && !asignados[j] && !asignados[i]; j++) {
-				if(min[i] <= nivel[j] && max[i] >= nivel[j] && min[j] <= nivel[i] && max[j] >= nivel[i]){
+			
+			for (int j = i + 1; j <= asignados.length -1 && !encontrado; j++) {
+				if (!asignados[j] && !asignados[i] && min[i] <= nivel[j] && max[i] >= nivel[j] && min[j] <= nivel[i] && max[j] >= nivel[i]) {
 					encontrado = true;
 					asignados[i] = true;
 					asignados[j] = true;
 					pareja = true;
-					System.out.println((i+1) + " " + (j+1));
+					System.out.println((i + 1) + " " + (j + 1));
 				}
-				
+
 			}
-			}
-		
-		if(!pareja){
+		}
+
+		if (!pareja) {
 			System.out.println("NO HAY");
 		}
-		}
-
-
+	}
 
 	public static void main(String[] args) {
-		Scanner tec = new Scanner(System.in);
+		
 		int superheroes = 0;
 
 		do {
 			superheroes = tec.nextInt();
-			if(superheroes>0 && superheroes<=100){
-			emparejamiento(superheroes);
-			System.out.println("---");
-			}else{
+			if (superheroes > 0) {
+				emparejamiento(superheroes);
 				System.out.println("---");
 			}
 		} while (superheroes > 0);
-
 	}
 
 }
-
-
